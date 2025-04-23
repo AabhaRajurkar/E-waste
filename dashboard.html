@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - E-Waste Management</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url('home.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: #00ffcc;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            margin-left: auto;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #00ffcc;
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        /* Dashboard Layout */
+        .dashboard-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px; /* To account for the fixed navbar */
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-right: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px 0;
+            text-decoration: none;
+            color: #00ffcc;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .sidebar a:hover {
+            color: #ffffff;
+        }
+
+        .content {
+            flex-grow: 1;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #00ffcc;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-size: 1em;
+            background: linear-gradient(45deg, #00ffcc, #0077ff);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #0077ff, #00ffcc);
+        }
+        nav ul li:last-child a {
+      margin-right: 40px;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="title">E-Waste Management</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="order.html">Tracker</a></li>
+            <li><a href="signin.html">Sign Out</a></li>
+            <li><a href="not.html">Notifications</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a href="profile.html">Profile</a>
+            <a href="order.html">Orders</a>
+            <a href="not.html">Notifications</a>
+            <a href="#">Settings</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="section">
+                <h2>Welcome, User!</h2>
+                <p>Manage your e-waste and track your orders here. Let's make the world a cleaner place together!</p>
+            </div>
+
+            <div class="section">
+                <h2>Your Orders</h2>
+                <p>Track the status of your orders and request pickup of your e-waste.</p>
+                <a href="order.html" class="btn">Track Orders</a>
+            </div>
+
+            <div class="section">
+                <h2>Notifications</h2>
+                <p>Stay updated with the latest news about e-waste management and your orders.</p>
+                <a href="not.html" class="btn">View Notifications</a>
+            </div>
+
+            <div class="section">
+                <h2>Account Settings</h2>
+                <p>Update your personal information and account preferences.</p>
+                <a href="#" class="btn">Edit Settings</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

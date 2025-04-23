@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - E-Waste Management</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url('home.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: #00ffcc;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            margin-left: auto;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #00ffcc;
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        /* Payment Section */
+        .payment-container {
+            max-width: 600px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00ffcc;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 1em;
+            background-color: transparent;
+            border: 1px solid #00ffcc;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .input-field::placeholder {
+            color: #aaa;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .payment-methods label {
+            display: flex;
+            align-items: center;
+            color: #00ffcc;
+        }
+
+        .payment-methods input {
+            margin-right: 10px;
+        }
+
+        .payment-methods input[type="radio"]:checked ~ #credit-card-fields,
+        .payment-methods input[type="radio"]:checked ~ #paypal-fields,
+        .payment-methods input[type="radio"]:checked ~ #bank-transfer-fields {
+            display: block;
+        }
+
+        .payment-methods input[type="radio"]:not(:checked) ~ #credit-card-fields,
+        .payment-methods input[type="radio"]:not(:checked) ~ #paypal-fields,
+        .payment-methods input[type="radio"]:not(:checked) ~ #bank-transfer-fields {
+            display: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2em;
+            background: linear-gradient(45deg, #00ffcc, #0077ff);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #0077ff, #00ffcc);
+        }
+
+        .separator {
+            margin: 20px 0;
+            color: #aaa;
+        }
+
+        /* Security note */
+        .security-note {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .payment-container {
+                padding: 20px;
+            }
+
+            .input-field {
+                font-size: 1em;
+            }
+
+            .btn {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+        nav ul li:last-child a {
+      margin-right: 40px;
+    }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="title">E-Waste Management</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="order.html">Tracker</a></li>
+            <li><a href="signin.html">Sign out</a></li>
+            <li><a href="not.html">Notification</a></li> 
+        </ul>
+    </nav>
+
+    <!-- Payment Form -->
+    <div class="payment-container">
+        <h2>Payment Details</h2>
+
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+            <label>
+                <input type="radio" name="payment-method" value="credit-card" checked> Credit Card
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="paypal"> PayPal
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="bank-transfer"> Bank Transfer
+            </label>
+        </div>
+
+        <!-- Credit Card Fields (hidden by default) -->
+        <div id="credit-card-fields">
+            <input type="text" class="input-field" name="card-number" placeholder="Card Number" required>
+            <input type="text" class="input-field" name="expiry" placeholder="Expiry Date (MM/YY)" required>
+            <input type="text" class="input-field" name="cvv" placeholder="CVV" required>
+        </div>
+
+        <!-- PayPal Fields (hidden by default) -->
+        <div id="paypal-fields" style="display:none;">
+            <input type="email" class="input-field" name="paypal-email" placeholder="PayPal Email" required>
+        </div>
+
+        <!-- Bank Transfer Fields (hidden by default) -->
+        <div id="bank-transfer-fields" style="display:none;">
+            <input type="text" class="input-field" name="bank-account" placeholder="Bank Account Number" required>
+        </div>
+
+        <!-- Form Fields -->
+        <form action="#" method="post">
+            <input type="text" class="input-field" name="name" placeholder="Full Name" required>
+            <input type="email" class="input-field" name="email" placeholder="Email" required>
+            <input type="text" class="input-field" name="address" placeholder="Billing Address" required>
+
+            <button type="submit" class="btn">Submit Payment</button>
+        </form>
+
+        <!-- Security note -->
+        <div class="security-note">
+            <p>Your payment information is secured with encryption. Please ensure you are on a trusted network before making a payment.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - E-Waste Management</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url('home.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        /* Navbar styles */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: #00ffcc;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            margin-left: auto;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #00ffcc;
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        /* Sign-Up Form */
+        .auth-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00ffcc;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 1em;
+            background-color: transparent;
+            border: 1px solid #00ffcc;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .input-field::placeholder {
+            color: #aaa;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2em;
+            background: linear-gradient(45deg, #00ffcc, #0077ff);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #0077ff, #00ffcc);
+        }
+
+        .toggle-link {
+            color: #00ffcc;
+            font-size: 1em;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .toggle-link:hover {
+            color: #ffffff;
+        }
+
+        .separator {
+            margin: 20px 0;
+            color: #aaa;
+        }
+        nav ul li:last-child a {
+      margin-right: 40px;
+    }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="title">E-Waste Management</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="order.html">Tracker</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+            <li><a href="not.html">Notification</a></li> 
+        </ul>
+    </nav>
+
+    <!-- Sign-Up Section -->
+    <div class="auth-container">
+        <h2>Create Account</h2>
+
+        <!-- Sign-Up Form -->
+        <form action="dashboard.html" method="post">
+            <input type="text" class="input-field" name="username" placeholder="Username" required>
+            <input type="email" class="input-field" name="email" placeholder="Email" required>
+            <input type="password" class="input-field" name="password" placeholder="Password" required>
+            <input type="password" class="input-field" name="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+
+        <a href="signin.html" class="toggle-link">Already have an account? Sign In</a>
+    </div>
+
+</body>
+</html>
